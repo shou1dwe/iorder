@@ -1,0 +1,282 @@
+@font-face {
+font-family: PixelEmulator;
+src: url("pixel-emulator.otf") format("opentype");
+}
+
+* {
+  font-family: PixelEmulator;
+  color: #776e65;
+  box-sizing: border-box;
+}
+
+html, body {
+  z-index: -1;
+  background: #faf8ef;
+  font-size: 18px;
+  max-width: 768px;
+  padding: 10px;
+  margin: auto;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+button {
+  border-radius: 0px;
+  border: 3px solid #ddd;
+  border-bottom: 4px solid #aaa;
+  font-size: 12px;
+  background: #eee;
+  display: inline-block;
+  vertical-align: top;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+button:hover {
+    background: #e7e7e7;
+}
+
+button:active {
+    border-bottom: 1px solid #aaa;
+    padding-bottom: 3px;
+}
+
+button:focus{
+  outline: none;
+}
+
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+
+.heading-container {
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.order-container {
+  border: 3px solid #ddd;
+  background: #eee;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 20px;
+}
+
+.order-container:after, .order-container:before{
+  clear: both;
+  display: table;
+  content: " ";
+}
+
+.order-container-title {
+  width: 100%;
+  font-size: 25px;
+  font-weight: bold;
+  padding: 5px;
+}
+
+.item-container-outer {
+  width: 50%;
+  background-clip: content-box;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.item-container {
+  width: 100%;
+  background-color: #fafafa;
+  border-top: 2px solid #e7e7e7;
+  border-right: 3px solid #ddd;  
+  border-bottom: 4px solid #aaa;
+  border-left: 3px solid #ddd;
+  padding: 0px;
+  font-size: 15px;
+}
+
+.item-container:after, .item-container:before{
+  clear: both;
+  display: table;
+  content: " ";
+  padding: 5px 0 5px 0;
+}
+
+.item-mask {
+   background: rgba(0,0,0,0);
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.item-mask:active {
+  opacity: 0.5;
+}
+
+.item-container img {
+  max-width: 60%;
+  margin: auto;
+  height: auto;
+  display:block;
+}
+
+.item-container p {
+  margin: 10px;
+}
+
+.item-container .item-price, .item-container .item-quantity {
+  margin:auto;
+  padding: 0 10px 3px 10px;
+}
+
+.question-background, .question-container {
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.question-container-enter {
+  opacity: 0.01;
+  margin-top: 50px; 
+}
+
+.question-container-enter.question-container-enter-active {
+  margin-top: 0px;
+  opacity: 1;
+  transition: opacity 0.3s ease, margin-top 0.3s;
+  -webkit-transition: opacity 0.3s ease, margin-top 0.3s; 
+}
+
+.question-container-leave {
+  margin-top: 0px;
+  opacity: 1;
+  transition: opacity 0.3s ease, margin-top 0.3s;
+  -webkit-transition: opacity 0.3s ease, margin-top 0.3s;  
+}
+
+.question-container-leave.question-container-leave-active {
+  opacity: 0.01;
+  margin-top: -50px;
+}
+
+.question-background {
+  z-index: 900;
+  background: rgba(0,0,0,0.7);
+}
+
+.question-modal {
+  position: relative;
+  z-index: 1000;
+  max-width: 500px;
+  margin: 80px auto;
+  padding: 10px 20px;
+  background-color: #fafafa;
+  border-top: 5px solid #979797;
+  border-right: 5px solid #999;
+  border-bottom: 5px solid #666;
+  border-left: 5px solid #999;
+}
+
+.question-graph {
+  height: 120px;
+  width: 100%;
+}
+
+.cal-container {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.cal-display {
+  width: 98.5%;
+  margin: 0px auto 10px auto;
+  padding: 5px 20px;
+  background: #fefefe;
+  border: 3px dotted #e7e7e7;
+  text-align: right;
+}
+
+.cal-button {
+  width: 100%;
+  background-color: #fafafa;
+  border-top: 1px solid #e7e7e7;
+  border-right: 2px solid #ddd;  
+  border-bottom: 2px solid #aaa;
+  border-left: 2px solid #ddd;
+  font-size: 15px;
+}
+
+.cal-button:after, .cal-button:before{
+  clear: both;
+  display: table;
+  content: " ";
+  padding: 2px 0 2px 0;
+}
+
+.cal-button-mask {
+   background: rgba(0,0,0,0);
+   transition: opacity .25s ease-in-out;
+   -moz-transition: opacity .25s ease-in-out;
+   -webkit-transition: opacity .25s ease-in-out;
+}
+
+.cal-button-mask:active {
+  opacity: 0.8;
+}
+
+.cal-button-buy {
+  background-color: #ffdfdf
+}
+
+.cal-button-sell {
+  background-color: #dfffdf
+}
+
+@media only screen and (max-width: 768px) { 
+  html, body {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  button {
+    font-size: 15px;
+  }
+
+  .order-container-title {
+    font-size: 18px;
+  }
+
+  .item-container-outer {
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    padding-left: 3px;
+  }
+
+  .item-container .item-price, .item-container .item-quantity {
+    font-size: 13px;
+  }
+
+  .question-modal {
+    margin: 30px 15px;
+  }
+
+  .question-background {
+    cursor:pointer;
+  }
+
+  .cal-button {
+    font-size: 12px;
+  }
+}
